@@ -1,0 +1,15 @@
+.review-button {
+    font-size: 18px;
+    background-color: #ff9800;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .review-button:hover {
+    background-color: #ff7d00;
+  }
+  

@@ -25,7 +25,7 @@ const UserCreationForm = ({ onSubmit }) => {
   //Render the form
   return (
     <form className="create-user-form" onSubmit={handleSubmit}>
-      <h3>Create New User</h3>
+      <h3>Create New Student</h3>
       <label>Name</label>
       <input
         type="text"
@@ -34,7 +34,7 @@ const UserCreationForm = ({ onSubmit }) => {
         onChange={handleChange}
         className="form-input"
       />
-      <label>Job Title</label>
+      <label>Class Section</label>
       <input
         type="text"
         name="jobTitle"
@@ -42,7 +42,7 @@ const UserCreationForm = ({ onSubmit }) => {
         onChange={handleChange}
         className="form-input"
       />
-      <label>Company Name</label>
+      <label>School Name</label>
       <input
         type="text"
         name="companyName"

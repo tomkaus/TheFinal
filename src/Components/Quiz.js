@@ -1,6 +1,5 @@
-
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import "./Quiz.css"; // Import the CSS file for your quiz
 
 function Quiz() {
   // Define your quiz questions and answers here
@@ -15,11 +14,11 @@ function Quiz() {
       correctAnswer: true,
     },
     {
-        question: "(4x + 3) - (-7x -4) ",
-        options: ["11x + 1", "11x + 7", "3x - 1", "-3x - 1"],
-        correctAnswer: "11x + 7",
-      },
-    // Add questions for other lessons here
+      question: "(4x + 3) - (-7x -4) ",
+      options: ["11x + 1", "11x + 7", "3x - 1", "-3x - 1"],
+      correctAnswer: "11x + 7",
+    },
+    // Add more questions here
   ];
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -39,32 +38,50 @@ function Quiz() {
     }
   };
 
+  const handleRetakeQuiz = () => {
+    setCurrentQuestion(0);
+    setScore(0);
+    setShowScore(false);
+  };
+
   return (
-    <div className="quiz">
-      {showScore ? (
-        <div className="score">
-          <h2>Your Score: {score}/{questions.length}</h2>
-        </div>
-      ) : (
-        <div className="question-container">
-          <h2>Question {currentQuestion + 1}</h2>
-          <p>{questions[currentQuestion].question}</p>
-          {typeof questions[currentQuestion].correctAnswer === "boolean" ? (
-            <div className="true-false-options">
-              <button onClick={() => handleAnswerClick(true)}>True</button>
-              <button onClick={() => handleAnswerClick(false)}>False</button>
-            </div>
-          ) : (
-            <div className="multiple-choice-options">
-              {questions[currentQuestion].options.map((option, index) => (
-                <button key={index} onClick={() => handleAnswerClick(option)}>
-                  {option}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
+    <div className="quiz-container">
+      <div className="quiz-card">
+        {showScore ? (
+          <div className="score">
+            <h2>
+              Your Score: {((score / questions.length) * 100).toFixed(2)}%
+            </h2>
+          </div>
+        ) : (
+          <div className="question-container">
+            <h2>Question {currentQuestion + 1}</h2>
+            <p className="question-text">
+              {questions[currentQuestion].question}
+            </p>
+            {typeof questions[currentQuestion].correctAnswer === "boolean" ? (
+              <div className="true-false-options">
+                <button onClick={() => handleAnswerClick(true)}>True</button>
+                <button onClick={() => handleAnswerClick(false)}>False</button>
+              </div>
+            ) : (
+              <div className="multiple-choice-options">
+                {questions[currentQuestion].options.map((option, index) => (
+                  <button key={index} onClick={() => handleAnswerClick(option)}>
+                    {option}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+        {showScore && (
+          <div className="feedback">
+            <p>How were the lessons and quiz?</p>
+            <button onClick={handleRetakeQuiz}>Retake Quiz</button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

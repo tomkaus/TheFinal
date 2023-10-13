@@ -1,6 +1,6 @@
-import React from 'react';
-import './Course.css';
-import image from './Images/Instructor.jpg';
+import React from "react";
+import "./Course.css";
+import image from "./Images/Instructor.jpg";
 
 export default function Course() {
   return (
@@ -10,8 +10,9 @@ export default function Course() {
         <p className="course-description">
           Welcome to the Intermediate Algebra course! In this course, you will
           learn fundamental concepts of algebra and build a strong foundation
-          for more advanced mathematical topics. Please login, make sure you type in your class section.
-           Watch the lessons and take the quiz. Come back to the login page and tell me how you did.
+          for more advanced mathematical topics. Please login, make sure you
+          type in your class section. Watch the lessons and take the quiz. Come
+          back to the login page and tell me how you did.
         </p>
         <h2>Instructor Info</h2>
         <p>

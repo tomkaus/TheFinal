@@ -22,7 +22,7 @@ const UserUpdateModal = ({ user, onUpdate, onClose }) => {
   return (
     <div className="modal">
       <div className="modal-content">
-        <h3>Update User</h3>
+        <h3>Update Student</h3>
         <form onSubmit={handleSubmit}>
           <label>Update Name</label>
           <input
@@ -31,14 +31,14 @@ const UserUpdateModal = ({ user, onUpdate, onClose }) => {
             value={updatedUser.name}
             onChange={handleChange}
           />
-          <label>Update Job Title</label>
+          <label>Update Class Section</label>
           <input
             type="text"
             name="jobTitle"
             value={updatedUser.jobTitle}
             onChange={handleChange}
           />
-          <label>Update Company Name</label>
+          <label>Update School Name</label>
           <input
             type="text"
             name="companyName"
