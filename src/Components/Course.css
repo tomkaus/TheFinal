@@ -1,0 +1,19 @@
+/* Course.css */
+
+.course-container {
+    max-width: 600px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the content on the page */
+  }
+  
+  .instructor-image {
+    max-width: 100%; /* Make the image responsive to its container */
+    border: 2px solid #333; /* Add a border around the image */
+  }
+  
+  .course-description {
+    font-size: 16px; /* Adjust the font size as needed */
+    /* Add other styles as needed */
+  }
+  
+  /* Add additional CSS rules for your other elements as required */
+  
